@@ -1,0 +1,11 @@
+<table class="table table-bordered">
+    <tr ng-repeat="item in foundList.items">
+        <td>
+            <h4>{{ item.name }}</h4>
+            <h5>{{ item.short_name }}</h5>
+            <p>{{ item.description }}</p>
+            <button ng-click="foundList.onRemove({index: $index});">Don't want this one!</button>
+        </td>
+    </tr>
+</table>
+<div class="error" ng-if="foundList.showEmptyMessage">{{foundList.emptyMessage}}</div>
