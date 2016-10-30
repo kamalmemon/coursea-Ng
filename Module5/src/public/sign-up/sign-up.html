@@ -1,0 +1,44 @@
+<div class="signup" ng-form="singUpForm">
+    <h1 class="text-center">Sign Up</h1>
+    <div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input class="form-control" type="text" name="firstName" placeholder="Enter First Name"
+                required ng-model="signupCtrl.firstName" autofocus> </input>
+                 <span class="error" ng-show="!singUpForm.firstName.$valid && singUpForm.firstName.$touched">*</span>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input class="form-control" name="lastName" type="text" placeholder="Enter Last Name"
+            required ng-model="signupCtrl.lastName">
+             <span class="error" ng-show="!singUpForm.lastName.$valid && singUpForm.lastName.$touched">*</span>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input class="form-control" name="email" type="email" placeholder="me@example.com" 
+            required ng-model="signupCtrl.email">
+             <span class="error" ng-show="!singUpForm.email.$valid && singUpForm.email.$touched">Invalid Email</span>
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input class="form-control" name="phoneNumber" placeholder="Enter Phone Number" type="text" 
+            required ng-model="signupCtrl.phoneNumber">
+             <span class="error" ng-show="!singUpForm.phoneNumber.$valid && singUpForm.phoneNumber.$touched">*</span>
+        </div>
+        <div class="form-group">
+            <label>Favorite Menu Number</label>
+            <input class="form-control" name="menuNumber" placeholder="Enter your favourite dish's menu number" type="text" 
+            required ng-model="signupCtrl.menuNumber">
+             <span class="error" ng-show="!singUpForm.menuNumber.$valid && singUpForm.menuNumber.$touched">*</span>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="signupCtrl.signUp()" ng-disabled="!singUpForm.$valid">Submit</button>
+        </div>
+    </div>
+    <div ng-if="signupCtrl.status" class="signup-success text-center">
+        {{signupCtrl.status}}
+    </div>
+     <div ng-if="signupCtrl.error" class="signup-error text-center">
+        {{signupCtrl.error}}
+    </div>
+</div>
